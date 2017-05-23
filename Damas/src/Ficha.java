@@ -5,9 +5,7 @@ public class Ficha {
 		this.color=color;
 	}
 	
-	public void captura(){
-		
-	}
+	
 	public boolean puedeCapturar(Ficha otraFicha){
 		if(this.color.equals(otraFicha.color)){
 			return false;
