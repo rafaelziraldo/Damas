@@ -11,9 +11,13 @@ public class Jugador {
 		
 		
 	}
-	public void PonerFichaA(Casilla casilla ){
-		casilla.recibir(fichas.get(a));
-		a++;
+	public void PonerFichaA(Tablero tablero ){
+		for(int i=0;i<fichas.size();i++){
+			for(int j=0;j<fichas.size();j++)
+		tablero.casillas[i][j].recibir(fichas.get(i));
+		
+		fichas.remove(i);
+		}
 	}
 	public void gana(){
 		

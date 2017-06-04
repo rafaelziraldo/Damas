@@ -2,8 +2,9 @@ import java.util.ArrayList;
 
 public class Casilla {
 	ArrayList<Ficha>ficha=new ArrayList<Ficha>();
-	public Casilla() {
-		
+	String color;
+	public Casilla(String color) {
+		this.color=color;
 	} 
 	public void recibir(Ficha f){
 		ficha.add(f);
@@ -12,8 +13,14 @@ public class Casilla {
 		ficha.clear();
 	}
 	public void pasarA(Casilla otraCasilla,Ficha f){
+		
 		this.sacar(f);
 		otraCasilla.recibir(f);
+	}
+	public void moverA(Casilla otraCasilla,Ficha f){
+		if(!otraCasilla.tieneFicha(otraCasilla)){
+			this.pasarA(otraCasilla, f);
+		}
 	}
 	public void captura(Ficha otraFicha,Casilla casilla,Casilla casillaDestino){
 		if(ficha.get(0).puedeCapturar(otraFicha)&&casilla.tieneFicha(casilla)&& !casillaDestino.tieneFicha(casillaDestino)){
