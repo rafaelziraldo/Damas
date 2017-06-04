@@ -5,8 +5,11 @@ public class Tablero {
 	public Tablero() {
 		for(int i=0;i<casillas.length;i++){
 			for(int j=0;j<casillas.length;j++){
-				
-				casillas[i][j]=new Casilla();
+				if((i+j)%2==0){
+				casillas[i][j]=new Casilla("negra");
+				}else{
+					casillas[i][j]=new Casilla("roja");
+				}
 			}
 			
 		}
